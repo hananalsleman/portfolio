@@ -1,0 +1,351 @@
+
+
+*{
+    box-sizing: border-box;
+  }
+  html {
+      scroll-behavior: smooth;
+  }
+  
+  /* ****** */
+  
+  .main-color{
+      color: #f82dff;
+  }
+  
+.form-control::placeholder {
+    color: #6c757d75;
+}
+
+/*  ***** ******/ 
+/*    Navbar   */
+/* *************/
+.navbar{
+    display: none;
+    padding: 3% 6% 1% 6%;
+    background-color: rgba(255,255,255,0.9);
+}
+.navbar-brand {
+    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+#dashboard .navbar{
+    padding: 2% 3% 0%;
+}
+  
+#dashboard .sidebar{
+    padding:1% 2%;
+    min-height: 100vh;
+    background-color: #f82dff;
+    /*background-image: linear-gradient(180deg, #fdb7ff 10%, #f82dff 100%);*/
+    background-size: cover;
+    color:#fff;
+}
+/*
+#dashboard .sidebar h1{
+    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 32px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+*/
+#dashboard .sidebar h3{
+    font-weight: bold;
+    text-align: center;
+    font-size: 17px;
+    margin-top:15px;
+    margin-bottom: 10px;
+}
+#dashboard .sidebar hr{
+    border-color: #ffd3ee7a;
+}
+
+#dashboard .sidebar h4{
+    color:#ffd3ee;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#dashboard .sidebar .nav-item a{
+    color:rgba(255,255,255,.8);
+    font-size: 14px;
+    margin:10px auto;
+    transition: all .5s ease;
+}
+#dashboard .sidebar .nav-item a:hover{
+    color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(231, 232, 235) ;
+}
+#dashboard .sidebar .nav-item a.active{
+    background-color: #faeaf4;
+    color:#f82dff;
+    font-weight: bold;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(231, 232, 235) ;
+}
+#dashboard .sidebar-content {
+    padding: 2%;
+    background-color: #f82dff0d;
+}
+#dashboard .tab-pane-content p,#dashboard .tab-pane-content .p{
+    padding-left: 3%;
+}
+#dashboard .topbar{
+    margin-bottom: 20px;
+}
+
+#dashboard .topbar h3{
+    font-size: 20px;
+    font-weight: bold;
+}
+#dashboard button{
+    background: none;
+    border:none;
+    transition: all .5s ease;
+    cursor: pointer;
+    border-radius: 2px;
+}
+#dashboard .topbar button{
+    background-color: #f82dff;
+    padding: 5px 15px;
+    color:rgba(255,255,255,.8);
+}
+#dashboard .topbar button:hover{
+    color: #fff;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) ;
+}
+#dashboard .panel{
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) ;
+    border-radius: 5px;
+    background-color: #fff;
+    height: 100%;
+}
+#dashboard .panel .panel-header{
+    padding: .75rem 1.25rem;
+    padding-top: 1rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+    background-color: #f8f9fc;
+    border-top-left-radius:5px ;
+    border-top-right-radius:5px ;
+}
+#dashboard .panel .panel-header h6{
+    color:#f82dff;
+    font-weight: bold;
+    margin-bottom: 0;
+    display: inline-block;
+}
+#dashboard .panel .panel-body{
+    padding: .75rem 1.25rem;
+}
+#dashboard .modal .save{
+    background-color: #f82dff;
+    padding-right: 4%;
+    padding-left: 4%;
+}
+#dashboard .modal .save:hover{
+    box-shadow:-1px 5px 5px #ccc;
+}
+#dashboard .modal .cancel{
+    background-color: #ccc;
+}
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+#dashboard .modal input:focus,#dashboard .modal textarea:focus{
+    outline: none;
+}
+/*************************/
+/******* Home **********/
+/******************/
+
+#dashboard #home img{
+    padding: 0;
+ }
+ #dashboard #home label , #dashboard #about label{
+     display: block;
+     font-weight: bold;
+ }
+/*************************/
+/******* About **********/
+/******************/
+#dashboard #about .panel-body .line{
+    margin: 20px auto;
+}
+#dashboard #about .panel .panel-body .line label{
+    width:35%;
+    display: inline-block;
+}
+#dashboard .skill {
+    display: inline-block;
+    margin: auto;
+    margin-top: 25px;
+    min-width: 40%;
+    position: relative;
+    transition: all .5s ease;
+}
+#dashboard .skill h6{
+    text-align: center;
+    margin: 0;
+}
+#dashboard .skill .skill-choices, #dashboard .technique .technique-choices{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    background-color: #f3f3f3ce;
+    display: none;
+    z-index: 10000;
+    border-radius: 5px;
+}
+#dashboard .technique .technique-choices{
+    height: 100%;
+}
+#dashboard .skill:hover .skill-choices,#dashboard .technique:hover .technique-choices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#dashboard .skill .skill-choices a,#dashboard .technique .technique-choices a{
+    font-size: 19px;
+    color:#f82dff;
+}
+#dashboard #about .techniques .progress{
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+    margin-bottom: 20px;
+  }
+  #dashboard #about .techniques  .progress .progress-bar-danger{
+    background: #f82dff;
+  }
+  #dashboard .progress-bar {
+      -webkit-transition: width 2.5s ease;
+      transition: width 2.5s ease;
+  }
+  #dashboard #about .techniques .technique  span{
+    color: #222;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+  }
+  #dashboard #about .techniques small{
+    font-weight: bold;
+    float: right;
+  }
+
+/*************************/
+/******* End About **********/
+/******************/
+
+#dashboard #achievements .achievement{
+    margin-top:35px;
+}
+#dashboard #achievements .panel{
+    border:none;
+}
+#dashboard #achievements .achievement .panel-header{
+    border: none;
+    background: none;
+}
+#dashboard #achievements .icon-container{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+    margin-top: -50px;
+    color:#f1ee15;
+}
+#dashboard #achievements .icon-container i{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    line-height: 70px;
+}
+#dashboard #achievements .achievement .panel-body{
+    text-align: center;
+    padding: 0;
+    margin-bottom: 70px;
+}
+#dashboard #achievements .achievement .panel-body label{
+    width: 100%;
+    background-color: #c8c8c8;
+    padding: 3% 1%;
+    color: #fff;
+    font-weight: bold;
+}
+#dashboard #achievements .achievement .panel-body p{
+    color: #4e4e4e;
+    padding: 5% 6% 1%;
+    font-size: 15px;
+}
+#dashboard #achievements .achievement .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#dashboard #achievements .achievement .footer span{
+    padding: 1% 7%;
+    color: #8c8c8c;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+}
+#dashboard #achievements .achievement .footer span i{
+    width:10%;
+    text-align: center;
+}
+/*************************/
+/******* Contact **********/
+/******************/
+#dashboard #contact .contact-me p{
+    padding-top: 3%;
+}
+
+#dashboard #contact .contact-me p i{
+    width: 15%;
+    font-size: 19px;
+    text-align: center;
+}
+
+#dashboard #contact .input-group-prepend{
+    width:10%;
+}
+
+#dashboard #contact .input-group-prepend .input-group-text{
+    width: 100%;
+    padding: 0;
+}
+#dashboard #contact .input-group-prepend .input-group-text i{
+    margin: auto;
+}
+
+#dashboard #contact .social_links .line{
+    margin-top: 3%;
+}
+#dashboard #contact .social_links .line label{
+    width:35px;
+    height: 35px;
+    font-size: 18px;
+    text-align: center;
+    border: #f82dff solid 2px;
+    padding: 2px;
+    margin-right: 16px;
+    background-color: #f82dff;
+    color: #fff;
+}
+/*************************/
+/******* End Contact **********/
+/******************/
