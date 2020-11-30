@@ -64,7 +64,7 @@
                     </div>
                     
                     <div class="tab-pane-content d-flex panel" id="home">
-                        <img src="images/myImage.jpg" class="col-md-5 " alt="">
+                        <img src="uploads/{{ $myinfo->image  }}" class="col-md-5 " alt="">
                         <div class="col-md-7 d-flex pl-4 align-items-center"> 
                             <div>
                                  @if(Session::has('success'))
@@ -93,7 +93,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form role="form" method="post" action="edit-home">
+                                <form role="form" method="post" action="edit-home" enctype="multipart/form-data">
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name </label>
@@ -110,7 +110,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1">Image</label>
-                                        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" name="image" class="form-control-file" id="image">
                                     </div>
                                     <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                     <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -250,7 +250,7 @@
                                         <div class=""> 
                                             @foreach ($skills as $skill)
                                             <div class="skill">
-                                                <div class="skill-choices">
+                                                <div class="skill-choices choices">
                                                     <a href=""  data-id="{{ $skill->id }}"  id="editSkill" data-toggle="modal" data-target="#editSkillModal"><i class="fa fa-edit mr-2"></i></a>
                                                     <a href="" data-id="{{ $skill->id }}"  id="deleteSkill" data-toggle="modal" data-target="#deleteSkillModal"><i class="fa fa-trash"></i></a>
                                                 </div>
@@ -357,7 +357,7 @@
                                         <div class="d-flex flex-wrap">                 
                                             @foreach ($techniques as $technique)
                                             <div class="col-md-6 technique">
-                                                <div class="technique-choices">
+                                                <div class="technique-choices choices">
                                                     <a href=""  data-id="{{ $technique->id }}"  id="editTechnique" data-toggle="modal" data-target="#editTechniqueModal"><i class="fa fa-edit mr-2"></i></a>
                                                     <a href="" data-id="{{ $technique->id }}"  id="deleteTechnique" data-toggle="modal" data-target="#deleteTechniqueModal"><i class="fa fa-trash"></i></a>
                                                 </div>
@@ -479,7 +479,11 @@
                                     <div class="panel-header">
                                         <div class="icon-container"><i class="fa fa-trophy"></i></div>
                                     </div>
-                                    <div class="panel-body">   
+                                    <div class="panel-body"> 
+                                        <div class="achievement-choices choices">
+                                            <a href=""  data-id="{{ $achievement->id }}"  id="editAchievement" data-toggle="modal" data-target="#editAchievementModal"><i class="fa fa-edit mr-2"></i></a>
+                                            <a href="" data-id="{{ $achievement->id }}"  id="deleteAchievement" data-toggle="modal" data-target="#deleteAchievementModal"><i class="fa fa-trash"></i></a>
+                                        </div>  
                                         <label>{{ $achievement->title }}</label>
                                         <p>{{ $achievement->description }}</p>
                                         <div class="footer">
@@ -491,17 +495,291 @@
                             </div>
                         @endforeach
                         </div>
-                        
+                             
+                        <!-- Modal Add Achievement -->
+                        <div class="modal fade" id="addAchievementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Achievement</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="post" action="add-achievement">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Title </label>
+                                            <input type="text" name="title" value=""class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter achievement title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Organisation</label>
+                                            <input type="text" name="organisation" class="form-control" id="exampleInputPassword1" placeholder="Enter organisation name..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Year</label>
+                                            <input type="number" max="" name="year" class="form-control" id="exampleInputPassword1" placeholder="Enter year..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Description</label>
+                                            <textarea name="description" class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary save pull-right">Save</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Add Achievement -->
+                              
+                        <!-- Modal Edit Achievement -->
+                        <div class="modal fade" id="editAchievementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Achievement</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="post" id="form_editAchievement" action="">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Title </label>
+                                            <input type="text" name="title" value=""class="form-control" id="achievement_title" aria-describedby="emailHelp" placeholder="Enter achievement title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Organisation</label>
+                                            <input type="text" name="organisation" class="form-control" id="achievement_organisation" placeholder="Enter organisation name..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Year</label>
+                                            <input type="number" max="" name="year" class="form-control" id="achievement_year" placeholder="Enter year..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Description</label>
+                                            <textarea name="description" id="achievement_description" class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary save pull-right">Save</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Edit Achievement -->
+                              
+                        <!-- Modal Delete Achievement -->
+                        <div class="modal fade" id="deleteAchievementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"> Delete Achievement</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form  role="form" id="form_deleteAchievement"  method="post">
+                                        {{csrf_field()}}
+                                        <p>Do you want to delete achievement <em id="delAchievement_title"></em> ??</p>
+                                        <button  type="submit" class="btn btn-primary save pull-right">Yes</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">No</button>
+                    
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Delete Achievement -->
+
                     </div>
                 </div>
                 <!-- End Achievements Section  -->
 
 
+                <!-- Experience Section  -->
                 <div class="tab-pane fade" id="v-pills-experience" role="tabpanel" aria-labelledby="v-pills-experience-tab">
                     <div class="d-flex justify-content-between topbar">
                         <h3><i class="fa fa-newspaper-o mr-2"></i>Experience</h3>
+                        <button data-toggle="modal" data-target="#addExperienceModal" ><i class="fa fa-plus mr-3"></i>New</button>
+                    </div>
+                    <div class="tab-pane-content" id="experience">
+                        <div id="cd-timeline" class="cd-container">
+                        @foreach ($experiences as $experience)
+                            <div class="cd-timeline-block experience ">
+                                <div class="experience-date pointer">
+                                    <div class="choices">
+                                        <a href=""  data-id="{{ $experience->id }}"  id="editExperience" data-toggle="modal" data-target="#editExperienceModal"><i class="fa fa-edit mr-2"></i></a>
+                                        <a href="" data-id="{{ $experience->id }}"  id="deleteExperience" data-toggle="modal" data-target="#deleteExperienceModal"><i class="fa fa-trash"></i></a>
+                                    </div> 
+                                    <span>  {{ $experience->start_year }} - {{ $experience->end_year }}</span>
+                                </div>
+                                <div class="cd-timeline-img cd-picture wow fadeInLeft " data-wow-delay="0.6s">
+                                    <span >{{ $loop->index+1 }}</span>
+                                </div>
+
+                                <div class="experience-content cd-timeline-content service-box-content wow fadeInLeft panel">
+                                    <div class="header">
+                                        <h2>{{ $experience->title }}</h2>
+                                    </div>
+                                    <p>{{ $experience->description }}
+                                        <br />
+                                        <span class="date-range">
+                                            <i class="fa fa-clock mr-2"></i>from {{ $experience->start_month }}, {{ $experience->start_year }}
+                                            to {{ $experience->end_month }} {{ $experience->end_year }}<br />
+                                            <i class="fa fa-map-marker mr-2"></i>{{ $experience->country }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        @endforeach
+                        </div>
+                           
+                        <!-- Modal Add Experience -->
+                        <div class="modal fade" id="addExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add Experience</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="post" action="add-experience">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Title </label>
+                                            <input type="text" name="title" required class="form-control" id=" " aria-describedby="emailHelp" placeholder="Enter Experience title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Organisation</label>
+                                            <input type="text" name="organisation" required class="form-control" id=" " placeholder="Enter organisation name..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Country</label>
+                                            <input type="text" name="country" required class="form-control" id=" " placeholder="Enter country name..">
+                                        </div>
+                                        <div class="row date">
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">Start Month</label>
+                                                <input type="number" max="12" min="1" name="start_month" required class="form-control " id=" " placeholder="Start Month..">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">Start Year</label>
+                                                <input type="number" max="" min="1990" name="start_year" required class="form-control " id=" " placeholder="Start Year">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">End Month</label>
+                                                <input type="number" max="12" min="1" name="end_month" required class="form-control " id=" " placeholder="End Month">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">End Year</label>
+                                                <input type="number" max="" min="1990" name="end_year" required class="form-control " id=" " placeholder="End Year">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Description</label>
+                                            <textarea name="description" required class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary save pull-right">Save</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Add Experience -->
+                              
+                        <!-- Modal Edit Experience -->
+                        <div class="modal fade" id="editExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Edit Experience</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form role="form" method="post" id="form_editExperience" action="">
+                                        {{csrf_field()}}
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Title </label>
+                                            <input type="text" name="title" required class="form-control" id="experience_title" aria-describedby="emailHelp" placeholder="Enter Experience title">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Organisation</label>
+                                            <input type="text" name="organisation" required class="form-control" id="experience_organisation" placeholder="Enter organisation name..">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Country</label>
+                                            <input type="text" name="country" required class="form-control" id="experience_country" placeholder="Enter country name..">
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">Start Month</label>
+                                                <input type="number" max="12" min="1" name="start_month" required class="form-control " id="experience_start_month" placeholder="Start Month..">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">Start Year</label>
+                                                <input type="number" max="" min="1990" name="start_year" required class="form-control " id="experience_start_year" placeholder="Start Year">
+                                            </div>
+                                            
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">End Month</label>
+                                                <input type="number" max="12" min="1" name="end_month" required class="form-control " id="experience_end_month" placeholder="End Month">
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label for="exampleInputPassword1">End Year</label>
+                                                <input type="number" max="" min="1990" name="end_year" required class="form-control " id="experience_end_year" placeholder="End Year">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Description</label>
+                                            <textarea name="description" required id="experience_description" class="form-control" rows="5"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary save pull-right">Save</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Edit Experience -->
+                              
+                        <!-- Modal Delete Experience -->
+                        <div class="modal fade" id="deleteExperienceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel"> Delete Experience</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form  role="form" id="form_deleteExperience"  method="post">
+                                        {{csrf_field()}}
+                                        <p>Do you want to delete experience <em id="delExperience_title"></em> ??</p>
+                                        <button  type="submit" class="btn btn-primary save pull-right">Yes</button>
+                                        <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">No</button>
+                    
+                                    </form>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Modal Delete Experience -->
+
                     </div>
                 </div>
+                <!-- End Experience Section  -->
+
 
                 <!-- Contact Section  -->
                 <div class="tab-pane fade" id="v-pills-contact" role="tabpanel" aria-labelledby="v-pills-contact-tab">

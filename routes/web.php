@@ -66,6 +66,38 @@ Route::post('/technique/{id}/delete', 'TechniqueController@destroy');
 
 //*************** End Technique ************////
 
+//************** Achievement ************////
+//add achievement
+Route::post('add-achievement', 'AchievementController@save');
+
+//get achievement
+Route::get('/achievement/{id}', 'AchievementController@getAchievement');
+
+//edit achievement
+Route::post('/achievement/{id}/edit', 'AchievementController@update');
+
+//delete achievement
+Route::post('/achievement/{id}/delete', 'AchievementController@destroy');
+
+//*************** End Achievement ************////
+
+//************** Experience ************////
+//add experience
+Route::post('add-experience', 'ExperienceController@save');
+
+//get experience
+Route::get('/experience/{id}', 'ExperienceController@getExperience');
+
+//edit experience
+Route::post('/experience/{id}/edit', 'ExperienceController@update');
+
+//delete experience
+Route::post('/experience/{id}/delete', 'ExperienceController@destroy');
+
+//*************** End Experience ************////
+
+
+
 //Route::get('contact-me', 'ContactController@getContact');
 
 Route::post('contact-me', 'ContactController@saveContact');

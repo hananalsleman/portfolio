@@ -44,3 +44,54 @@
                 })
         });
         
+        $('body').on('click', '#editAchievement', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+            $.get('achievement/' + id , function (data) {
+                $('#achievement_title').val(data.title);
+                $('#achievement_organisation').val(data.organisation);
+                $('#achievement_year').val(data.year);
+                $('#achievement_description').val(data.description);
+                $('#form_editAchievement').attr('action','achievement/'+data.id+'/edit');
+                
+                })
+            });
+        $('body').on('click', '#deleteAchievement', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+
+            $.get('achievement/' + id , function (data) {
+                $('#delAchievement_title').text(data.title);
+                $('#form_deleteAchievement').attr('action','achievement/'+data.id+'/delete');
+                
+                })
+        });
+
+        //Experience
+        $('body').on('click', '#editExperience', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+            $.get('experience/' + id , function (data) {
+                $('#experience_title').val(data.title);
+                $('#experience_organisation').val(data.organisation);
+                $('#experience_start_month').val(data.start_month);
+                $('#experience_start_year').val(data.start_year);
+                $('#experience_end_month').val(data.end_month);
+                $('#experience_end_year').val(data.end_year);
+                $('#experience_country').val(data.country);
+                $('#experience_description').val(data.description);
+                $('#form_editExperience').attr('action','experience/'+data.id+'/edit');
+                
+                })
+            });
+        $('body').on('click', '#deleteExperience', function (event) {
+            event.preventDefault();
+            var id = $(this).data('id');
+
+            $.get('experience/' + id , function (data) {
+                $('#delExperience_title').text(data.title);
+                $('#form_deleteExperience').attr('action','experience/'+data.id+'/delete');
+                
+                })
+        });
+        

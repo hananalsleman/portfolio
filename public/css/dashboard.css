@@ -17,6 +17,41 @@
     color: #6c757d75;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+#dashboard .choices{
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #ffffffeb;
+    display: none;
+    z-index: 10000;
+    border-radius: 5px;
+}
+#dashboard div:hover  > .choices{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#dashboard .choices a{
+    font-size: 19px;
+    color:#f82dff;
+}
+
+
 /*  ***** ******/ 
 /*    Navbar   */
 /* *************/
@@ -45,18 +80,6 @@
     background-size: cover;
     color:#fff;
 }
-/*
-#dashboard .sidebar h1{
-    font-family: "Raleway", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 32px;
-    letter-spacing: 1px;
-    text-align: center;
-    margin-bottom: 50px;
-    margin-top: 10px;
-}
-*/
 #dashboard .sidebar h3{
     font-weight: bold;
     text-align: center;
@@ -195,29 +218,11 @@ input:focus, textarea:focus, select:focus{
     text-align: center;
     margin: 0;
 }
-#dashboard .skill .skill-choices, #dashboard .technique .technique-choices{
-    position: absolute;
-    bottom:0;
-    left:0;
-    width: 100%;
+#dashboard .skill .skill-choices{
     height: 80%;
-    text-align: center;
-    background-color: #f3f3f3ce;
-    display: none;
-    z-index: 10000;
-    border-radius: 5px;
 }
 #dashboard .technique .technique-choices{
     height: 100%;
-}
-#dashboard .skill:hover .skill-choices,#dashboard .technique:hover .technique-choices{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#dashboard .skill .skill-choices a,#dashboard .technique .technique-choices a{
-    font-size: 19px;
-    color:#f82dff;
 }
 #dashboard #about .techniques .progress{
     border-radius: 4px;
@@ -247,8 +252,14 @@ input:focus, textarea:focus, select:focus{
 /******* End About **********/
 /******************/
 
+
+/*************************/
+/******* Achievements **********/
+/******************/
+
 #dashboard #achievements .achievement{
     margin-top:35px;
+    position: relative;
 }
 #dashboard #achievements .panel{
     border:none;
@@ -279,7 +290,7 @@ input:focus, textarea:focus, select:focus{
 }
 #dashboard #achievements .achievement .panel-body label{
     width: 100%;
-    background-color: #c8c8c8;
+    background-color: #a3a3a3;
     padding: 3% 1%;
     color: #fff;
     font-weight: bold;
@@ -291,7 +302,7 @@ input:focus, textarea:focus, select:focus{
 }
 #dashboard #achievements .achievement .footer{
     position: absolute;
-    bottom: 0;
+    bottom: 15px;
     left: 0;
     width: 100%;
 }
@@ -307,6 +318,326 @@ input:focus, textarea:focus, select:focus{
     width:10%;
     text-align: center;
 }
+#dashboard #achievements .achievement .achievement-choices{
+    height: 90%;
+}
+/*************************/
+/******* End Achievements **********/
+/******************/
+
+
+
+/*************************/
+/******* Experience **********/
+/******************/
+
+.cd-container {
+    width: 90%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.cd-container::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+#cd-timeline, #cd-timeline-2 {
+    position: relative;
+    padding: 2em 0;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+#cd-timeline::before, #cd-timeline-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 18px;
+    height: 100%;
+    width: 4px;
+    background: #ccc;
+}
+@media only screen and (min-width: 1170px) {
+    #cd-timeline, #cd-timeline-2 {
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+    #cd-timeline::before, #cd-timeline-2::before {
+        left: 50%;
+        margin-left: -2px;
+    }
+}
+.cd-timeline-block {
+    position: relative;
+    margin: 2em 0;
+}
+.cd-timeline-block .date-range{
+    color: #737373;
+    font-size: 14px;
+}
+.cd-timeline-block .date-range i{
+    width:15px;
+    text-align: center;
+}
+.cd-timeline-block:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cd-timeline-block:first-child {
+    margin-top: 0;
+}
+.cd-timeline-block:last-child {
+    margin-bottom: 0;
+}
+@media only screen and (min-width: 1170px) {
+    .cd-timeline-block {
+        margin: -3em 0;
+    }
+	#cd-timeline-2 .cd-timeline-block {
+        margin: -12em 0;
+    }
+	#cd-timeline-2 .cd-timeline-block:first-child {
+        margin-top: 0;
+    }
+	#cd-timeline-2 .cd-timeline-block:last-child {
+        margin-bottom: 0;
+    }
+    .cd-timeline-block:first-child {
+        margin-top: 0;
+    }
+    .cd-timeline-block:last-child {
+        margin-bottom: 0;
+    }
+}
+.cd-timeline-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    background-color: #eee;
+}
+.cd-timeline-img img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+}
+@media only screen and (min-width: 1170px) {
+    .cd-timeline-img {
+        width: 60px;
+        height: 60px;
+        left: 50%;
+        margin-left: -30px;
+    /* Force Hardware Acceleration in WebKit */
+        -webkit-transform: translateZ(0);
+        transform:translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    .cssanimations .cd-timeline-img.is-hidden {
+        visibility: hidden;
+    }
+    .cssanimations .cd-timeline-img.bounce-in {
+        visibility: visible;
+    }
+}
+.cd-timeline-content {
+    position: relative;
+    margin-left: 60px;
+    background-color: #eee;
+    border-radius: 0.50em;
+}
+.cd-timeline-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cd-timeline-content h2 {
+    font-weight: 600;
+    color: #333;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+.cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+    display: inline-block;
+}
+.cd-timeline-content p {
+    font-size: 16px !important;
+    color: #333;
+    line-height: 24px;
+}
+.cd-timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 100%;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-right: 7px solid white;
+}
+@media only screen and (min-width: 1170px) {
+    .cd-timeline-content {
+        margin-left: 0;
+        width: 45%;
+    }
+    .cd-timeline-content::before {
+        display: none;
+    }
+    .cd-timeline-block:nth-child(even) .cd-timeline-content {
+        float: right;
+    }
+    .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
+        top: 24px;
+        left: auto;
+        right: 100%;
+        border-color: transparent;
+        border-right-color: white;
+    }
+    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-read-more {
+        float: right;
+    }
+    .cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
+        left: auto;
+        right: 122%;
+        text-align: right;
+    }
+    .cssanimations .cd-timeline-content.is-hidden {
+        visibility: hidden;
+    }
+    .cssanimations .cd-timeline-content.bounce-in {
+        visibility: visible;
+    }
+}
+.service-box-content {
+    padding: 20px;
+}
+.cd-timeline-content {
+    margin-left: 0;
+}
+.cd-timeline-block {
+    overflow: hidden;
+}
+@media (max-width:768px) {
+    .cd-timeline-content {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+
+}
+@media (max-width:1170px) {
+    .cd-timeline-content {
+        margin-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+#dashboard #experience .cd-timeline-block {
+    margin: -1em 0;
+}
+#dashboard #experience .experience-content{
+    padding: 0;
+}
+#dashboard #experience .experience-content .header{
+    background-color: #e3e3e330;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 1%;
+    border-top: #f82dff 6px solid;
+}
+#dashboard #experience .header h2{
+    font-size: 18px;
+}
+#dashboard #experience .cd-timeline-img {
+    top: 30%;
+    border-color:#f82dff ;
+    background-color: #fafafa;
+}
+#dashboard #experience .experience-date{
+    position: absolute;
+    top: 30%;
+    width: 25%;
+    height: 60px;
+}
+#dashboard #experience .experience:nth-child(odd) .experience-date{
+    right: 25%;
+}
+#dashboard #experience .experience:nth-child(even) .experience-date{
+    left: 25%;
+}
+#dashboard #experience .experience-date{
+    background-color: #c8c8c8;
+}
+#dashboard #experience .experience-date span{
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    line-height: 60px;
+    color: #fff;
+    font-weight: bold;
+}
+#dashboard #experience p{
+    padding: 4%;
+}
+#dashboard #experience p .date-range{ 
+    margin-top: 5%;
+    display: block;
+}
+#dashboard #experience .experience:nth-child(odd) .pointer:before {
+    content: "";
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid #c8c8c8;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+#dashboard #experience .experience:nth-child(even) .pointer:after {
+    content: "";
+    position: absolute;
+    left: -20px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-right: 20px solid #c8c8c8;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+}
+#dashboard #experience .cd-timeline-img span{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+}
+#dashboard #experience div:hover  > .choices{
+    background: none;
+}
+#dashboard #experience div.experience-date:hover  > span{
+    display: none;
+}
+#dashboard .date  label{
+    font-size: 14px;
+}
+
+/*************************/
+/******* End Experience **********/
+/******************/
+
+
+
+
 /*************************/
 /******* Contact **********/
 /******************/

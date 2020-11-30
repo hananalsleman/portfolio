@@ -32,10 +32,19 @@ class DashboardController extends Controller
 
     public function editHomeInfo(Request $request){
         
+        $request->validate([
+            'image' => 'required'
+        ]);
+        
+        $imageName = time().'-MyImage'.'.'.$request->image->extension();  
+        $request->image->move(public_path('uploads'), $imageName);
+
         $me = Personal_info::find(0);
         $me->name = $request->name;
         $me->job = $request->job;
         $me->description = $request->description;
+        $me->image = $imageName;
+
         $me->save();
         
         return back()->with('success', 'You edited Your Personal Info Successfully!');

@@ -92,7 +92,7 @@
                         <div class="frame-1 animate__animated animate__bounce">
                             <div class="frame-2">
                                 <div class="frame-3">
-                                    <img class="myImage d-block" src="images/myImage.jpg" />
+                                    <img class="myImage d-block" src="uploads/{{ $myinfo->image}}" />
                                 </div>
                             </div>
                         </div>
@@ -135,14 +135,16 @@
                     <div class="box_timeline">
                         <ul>
                         @foreach ($achievements as $achievement )
-                            <li class="col-12 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
-                                <div class="date ">
-                                    <span> {{ $achievement->year }} </span>
-                                </div>
-                                <h3>{{ $achievement->title }}</h3>
-                                <p>{{ $achievement->description }}
-                                </p>
-                            </li>
+                            @if ($loop->index < 4)
+                                <li class="col-12 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+                                    <div class="date ">
+                                        <span> {{ $achievement->year }} </span>
+                                    </div>
+                                    <h3>{{ $achievement->title }}</h3>
+                                    <p>{{ $achievement->description }}
+                                    </p>
+                                </li>
+                            @endif
                         @endforeach
                         </ul>
                     </div>
@@ -159,6 +161,7 @@
                     <h2 class="heading">Here are my experience</h2>
                     <div id="cd-timeline" class="cd-container">
                     @foreach ($experiences as $experience)
+                        @if ($loop->index < 4)
                         <div class="cd-timeline-block">
                             <div class="cd-timeline-img cd-picture wow fadeInLeft" data-wow-delay="0.6s">
                                 <img src="images/first-icon.png" alt="Picture">
@@ -175,6 +178,7 @@
                                 </p>
                             </div>
                         </div>
+                        @endif
                     @endforeach
 
                     </div>
