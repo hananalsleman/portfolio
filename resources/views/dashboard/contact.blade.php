@@ -49,19 +49,19 @@
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-phone"></i></div>
                                     </div>
-                                    <input type="text" name="phone" class="form-control" value="{{$links->phone}}" placeholder="phone">
+                                    <input type="text" required name="phone" class="form-control" value="{{$links->phone}}" placeholder="phone">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
                                     </div>
-                                    <input type="text"  name="email" class="form-control" value="{{$links->email}}" placeholder="email">
+                                    <input type="text" required name="email" class="form-control" value="{{$links->email}}" placeholder="email">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-map-marker"></i></div>
                                     </div>
-                                    <input type="text" name="location"  class="form-control"value="{{$links->location}}" placeholder="location">
+                                    <input type="text" required name="location"  class="form-control"value="{{$links->location}}" placeholder="location">
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>

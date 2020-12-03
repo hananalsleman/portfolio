@@ -58,19 +58,19 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Title </label>
-                            <input type="text" name="title" value=""class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter achievement title">
+                            <input type="text" required name="title" value=""class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter achievement title">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Organisation</label>
-                            <input type="text" name="organisation" class="form-control" id="exampleInputPassword1" placeholder="Enter organisation name..">
+                            <input type="text" required name="organisation" class="form-control" id="exampleInputPassword1" placeholder="Enter organisation name..">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Year</label>
-                            <input type="number" max="" name="year" class="form-control" id="exampleInputPassword1" placeholder="Enter year..">
+                            <input type="number" required max="" name="year" class="form-control" id="exampleInputPassword1" placeholder="Enter year..">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea name="description" class="form-control" rows="5"></textarea>
+                            <textarea name="description" required class="form-control" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary save pull-right">Save</button>
                         <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -96,19 +96,19 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Title </label>
-                            <input type="text" name="title" value=""class="form-control" id="achievement_title" aria-describedby="emailHelp" placeholder="Enter achievement title">
+                            <input type="text" required name="title" value=""class="form-control" id="achievement_title" aria-describedby="emailHelp" placeholder="Enter achievement title">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Organisation</label>
-                            <input type="text" name="organisation" class="form-control" id="achievement_organisation" placeholder="Enter organisation name..">
+                            <input type="text" required name="organisation" class="form-control" id="achievement_organisation" placeholder="Enter organisation name..">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Year</label>
-                            <input type="number" max="" name="year" class="form-control" id="achievement_year" placeholder="Enter year..">
+                            <input type="number" required  max="" name="year" class="form-control" id="achievement_year" placeholder="Enter year..">
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">Description</label>
-                            <textarea name="description" id="achievement_description" class="form-control" rows="5"></textarea>
+                            <textarea name="description" required id="achievement_description" class="form-control" rows="5"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary save pull-right">Save</button>
                         <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>

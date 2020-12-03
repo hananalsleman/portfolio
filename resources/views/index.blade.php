@@ -86,12 +86,26 @@
                     <div class="col-12 col-md-4 order-3 order-md-3 ">
                         <div class="social-icons">
                             <ul>
+                                @if($links->facebook != '')
                                 <li><a href="{{$links->facebook}}" target="_blank"
                                         class="#"><i class="fa fa-facebook"></i></a></li>
+                                @endif
+                                @if($links->linkedin != '')
                                 <li><a href="{{$links->linkedin}}"
                                         target="_blank" class="#"><i class="fa fa-linkedin"></i></a></li>
+                                @endif
+                                @if($links->github != '')
                                 <li><a href="{{$links->github}}"
                                         target="_blank" class="#"><i class="fa fa-github"></i></a></li>
+                                @endif
+                                @if($links->twitter != '')
+                                <li><a href="{{$links->twitter}}"
+                                    target="_blank" class="#"><i class="fa fa-twitter"></i></a></li>
+                                @endif
+                                @if($links->instagram != '')
+                                <li><a href="{{$links->instagram}}"
+                                    target="_blank" class="#"><i class="fa fa-instagram"></i></a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>

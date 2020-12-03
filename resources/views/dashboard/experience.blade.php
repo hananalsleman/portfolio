@@ -65,33 +65,33 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Title </label>
-                            <input type="text" name="title" required class="form-control" id=" " aria-describedby="emailHelp" placeholder="Enter Experience title">
+                            <input type="text" required name="title"  class="form-control" id=" " aria-describedby="emailHelp" placeholder="Enter Experience title">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Organisation</label>
-                            <input type="text" name="organisation" required class="form-control" id=" " placeholder="Enter organisation name..">
+                            <input type="text" required name="organisation"  class="form-control" id=" " placeholder="Enter organisation name..">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Country</label>
-                            <input type="text" name="country" required class="form-control" id=" " placeholder="Enter country name..">
+                            <input type="text" required name="country"  class="form-control" id=" " placeholder="Enter country name..">
                         </div>
                         <div class="row date">
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">Start Month</label>
-                                <input type="number" max="12" min="1" name="start_month" required class="form-control " id=" " placeholder="Start Month..">
+                                <input type="number" required max="12" min="1" name="start_month"  class="form-control " id=" " placeholder="Start Month..">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">Start Year</label>
-                                <input type="number" max="" min="1990" name="start_year" required class="form-control " id=" " placeholder="Start Year">
+                                <input type="number" required max="" min="1990" name="start_year"  class="form-control " id=" " placeholder="Start Year">
                             </div>
                             
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">End Month</label>
-                                <input type="number" max="12" min="1" name="end_month" required class="form-control " id=" " placeholder="End Month">
+                                <input type="number" required max="12" min="1" name="end_month"  class="form-control " id=" " placeholder="End Month">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">End Year</label>
-                                <input type="number" max="" min="1990" name="end_year" required class="form-control " id=" " placeholder="End Year">
+                                <input type="number" required max="" min="1990" name="end_year"  class="form-control " id=" " placeholder="End Year">
                             </div>
                         </div>
                         <div class="form-group">
@@ -122,33 +122,33 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Title </label>
-                            <input type="text" name="title" required class="form-control" id="experience_title" aria-describedby="emailHelp" placeholder="Enter Experience title">
+                            <input type="text" required name="title"  class="form-control" id="experience_title" aria-describedby="emailHelp" placeholder="Enter Experience title">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Organisation</label>
-                            <input type="text" name="organisation" required class="form-control" id="experience_organisation" placeholder="Enter organisation name..">
+                            <input type="text" required name="organisation"  class="form-control" id="experience_organisation" placeholder="Enter organisation name..">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Country</label>
-                            <input type="text" name="country" required class="form-control" id="experience_country" placeholder="Enter country name..">
+                            <input type="text" required name="country"  class="form-control" id="experience_country" placeholder="Enter country name..">
                         </div>
                         <div class="row">
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">Start Month</label>
-                                <input type="number" max="12" min="1" name="start_month" required class="form-control " id="experience_start_month" placeholder="Start Month..">
+                                <input type="number" required max="12" min="1" name="start_month"  class="form-control " id="experience_start_month" placeholder="Start Month..">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">Start Year</label>
-                                <input type="number" max="" min="1990" name="start_year" required class="form-control " id="experience_start_year" placeholder="Start Year">
+                                <input type="number" required max="" min="1990" name="start_year"  class="form-control " id="experience_start_year" placeholder="Start Year">
                             </div>
                             
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">End Month</label>
-                                <input type="number" max="12" min="1" name="end_month" required class="form-control " id="experience_end_month" placeholder="End Month">
+                                <input type="number" required max="12" min="1" name="end_month"  class="form-control " id="experience_end_month" placeholder="End Month">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="exampleInputPassword1">End Year</label>
-                                <input type="number" max="" min="1990" name="end_year" required class="form-control " id="experience_end_year" placeholder="End Year">
+                                <input type="number" required max="" min="1990" name="end_year"  class="form-control " id="experience_end_year" placeholder="End Year">
                             </div>
                         </div>
                         <div class="form-group">

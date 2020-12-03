@@ -18,7 +18,7 @@
     
     <div class="tab-pane-content d-flex flex-wrap panel" id="home">
         <img src="uploads/{{ $myinfo->image  }}" class="col-12 col-md-5 " alt="">
-        <div class="col-12 col-md-7 d-flex mt-3 mt-md-0  pl-4 align-items-center"> 
+        <div class="col-12 col-md-7 d-flex mt-3 mt-md-0 pt-2  pl-4 align-items-center"> 
             <div>
                 @if(Session::has('success'))
                 <div class="alert alert-success">
@@ -50,16 +50,16 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="exampleInputEmail1">Name </label>
-                        <input type="text" name="name" value="{{ $myinfo->name }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                        <input type="text" name="name" required value="{{ $myinfo->name }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Job</label>
-                        <input type="text" name="job" value="{{ $myinfo->job }}" class="form-control" id="exampleInputPassword1" placeholder="Jobs..">
+                        <input type="text" name="job" required value="{{ $myinfo->job }}" class="form-control" id="exampleInputPassword1" placeholder="Jobs..">
                         <small id="emailHelp" class="form-text text-muted">Put ',' between every two jobs please.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Description</label>
-                        <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $myinfo->description }}</textarea>
+                        <textarea name="description" required class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $myinfo->description }}</textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Image</label>

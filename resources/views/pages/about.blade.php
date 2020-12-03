@@ -28,11 +28,23 @@
                         <i class="fa fa-quote-right pull-right"></i>
                     </div>
                     <div class="icons-social pl-1">
+                        @if($links->facebook != '')
                         <a href="{{$links->facebook}}" target="_blank"><i
                                 class="fa fa-facebook"></i></a>
+                        @endif
+                        @if($links->linkedin != '')
                         <a href="{{$links->linkedin}}" target="_blank"><i
                                 class="fa fa-linkedin"></i></a>
-                        <a href="{{$links->github}}"><i class="fa fa-github"></i></a>
+                        @endif
+                        @if($links->github != '')
+                        <a href="{{$links->github}}" target="_blank"><i class="fa fa-github"></i></a>
+                        @endif
+                        @if($links->twitter != '')
+                        <a href="{{$links->twitter}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                        @endif
+                        @if($links->instagram != '')
+                        <a href="{{$links->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -49,7 +61,7 @@
             </div>
             <div class=" techniques panel"> 
                 <h3>My Techniques</h3> 
-                <div class="d-flex flex-wrap mt-5 p-5">                 
+                <div class="d-flex flex-wrap mt-5 mb-5 pr-5 pl-5">                 
                     @foreach ($techniques as $technique)
                     <div class="col-md-6 technique">
                         <span >{{ $technique->name }}<small>%</small><small class="count"

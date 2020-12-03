@@ -11,7 +11,7 @@
     <section id="home">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 align-self-center mb-4 text-center text-md-left">
+                <div class="col-12 col-md-6 align-self-center mb-5 text-center text-md-left">
                     <hr class="m-auto ml-md-0" />
                     <h4 class="mt-2">Hello There!</h4>
                     <h1 class="mt-4 mb-4">I'm <span class="main-color">{{ $myinfo->name}}</span></h1>

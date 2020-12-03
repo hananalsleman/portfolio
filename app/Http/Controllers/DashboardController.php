@@ -70,17 +70,20 @@ class DashboardController extends Controller
     public function editHomeInfo(Request $request){
         
         $request->validate([
-            'image' => 'required'
+            'name' => 'required',
+            'job' => 'required',
+            'description' => 'required',
         ]);
-        
-        $imageName = time().'-MyImage'.'.'.$request->image->extension();  
-        $request->image->move(public_path('uploads'), $imageName);
-
+      
         $me = Personal_info::find(0);
         $me->name = $request->name;
         $me->job = $request->job;
         $me->description = $request->description;
-        $me->image = $imageName;
+        if($request->image != null){
+            $imageName = time().'-MyImage'.'.'.$request->image->extension();  
+            $request->image->move(public_path('uploads'), $imageName);
+            $me->image = $imageName;
+        }
 
         $me->save();
         
@@ -90,6 +93,11 @@ class DashboardController extends Controller
     
     public function editAboutmeInfo(Request $request){
         
+        $request->validate([
+            'aboutme_title' => 'required',
+            'aboutme_description' => 'required'
+        ]);
+      
         $me = Personal_info::find(0);
         $me->aboutme_title = $request->aboutme_title;
         $me->aboutme_description = $request->aboutme_description;
@@ -100,6 +108,13 @@ class DashboardController extends Controller
     
     public function editPersonalInfo(Request $request){
         
+        $request->validate([
+            'sex' => 'required',
+            'marital_status' => 'required',
+            'nationality' => 'required',
+            'languages' => 'required'
+        ]);
+
         $me = Personal_info::find(0);
         $me->sex = $request->sex;
         $me->marital_status = $request->marital_status;
@@ -111,7 +126,13 @@ class DashboardController extends Controller
     }
     
     public function editContactmeInfo(Request $request){
-        
+
+        $request->validate([
+            'phone' => 'required',
+            'email' => 'required',
+            'location' => 'required'
+        ]);
+
         $me = Social_Link::find(0);
         $me->phone = $request->phone;
         $me->email = $request->email;

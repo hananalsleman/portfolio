@@ -50,11 +50,11 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title </label>
-                                    <input type="text" name="aboutme_title" value="{{ $myinfo->aboutme_title }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input type="text" required name="aboutme_title" value="{{ $myinfo->aboutme_title }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Description</label>
-                                    <textarea name="aboutme_description" class="form-control" id="exampleFormControlTextarea1" rows="5">{{ $myinfo->aboutme_description }}</textarea>
+                                    <textarea required name="aboutme_description" class="form-control" id="exampleFormControlTextarea1" rows="5">{{ $myinfo->aboutme_description }}</textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -107,19 +107,19 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Sex </label>
-                                    <input type="text" name="sex" value="{{ $myinfo->sex }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input type="text" required name="sex" value="{{ $myinfo->sex }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Marital Status </label>
-                                    <input type="text" name="marital_status" value="{{ $myinfo->marital_status }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input type="text" required name="marital_status" value="{{ $myinfo->marital_status }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nationality</label>
-                                    <input type="text" name="nationality" value="{{ $myinfo->nationality }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input type="text" required name="nationality" value="{{ $myinfo->nationality }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Languages</label>
-                                    <input type="text" name="languages" value="{{ $myinfo->languages }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+                                    <input type="text" required name="languages" value="{{ $myinfo->languages }}"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -128,7 +128,9 @@
                         </div>
                     </div>
                 </div>
+                 <!-- End Modal Edit Personal Information -->
             </div>
+             <!-- End PERSONAL INFORMATION --> 
         </div>
         <div class="row">
             <div class="col-md-5  pb-3 skills"> 
@@ -168,11 +170,11 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name </label>
-                                    <input type="text" name="name" value=""class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter skill name">
+                                    <input type="text" required name="name" value=""class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter skill name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Percentage</label>
-                                    <input type="number" max="100" min="0" name="percentage" class="form-control" id="exampleInputPassword1" placeholder="Enter percentage..">
+                                    <input type="number" required max="100" min="0" name="percentage" class="form-control" id="exampleInputPassword1" placeholder="Enter percentage..">
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -198,11 +200,11 @@
                                 {{csrf_field()}}
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Name </label>
-                                    <input type="text" name="name" id="skill_name" value=""class="form-control"  aria-describedby="emailHelp" placeholder="Enter skill name">
+                                    <input type="text" required name="name" id="skill_name" value=""class="form-control"  aria-describedby="emailHelp" placeholder="Enter skill name">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Percentage</label>
-                                    <input type="number" max="100" min="0" name="percentage" class="form-control" id="skill_percentage" placeholder="Enter percentage..">
+                                    <input type="number" required max="100" min="0" name="percentage" class="form-control" id="skill_percentage" placeholder="Enter percentage..">
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -278,11 +280,11 @@
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name </label>
-                                        <input type="text" name="name" value=""class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter technique name">
+                                        <input type="text" required name="name" value=""class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter technique name">
                                     </div>
                                     <div class="form-group">
                                         <label for="">Percentage</label>
-                                        <input type="number" max="100" min="0" name="percentage" class="form-control" id="" placeholder="Enter percentage..">
+                                        <input type="number" required max="100" min="0" name="percentage" class="form-control" id="" placeholder="Enter percentage..">
                                     </div>
                                     <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                     <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
@@ -309,11 +311,11 @@
                                     {{csrf_field()}}
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Name </label>
-                                        <input type="text" name="name" id="technique_name" value=""class="form-control"  aria-describedby="emailHelp" placeholder="Enter skill name">
+                                        <input type="text" required name="name" id="technique_name" value=""class="form-control"  aria-describedby="emailHelp" placeholder="Enter skill name">
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Percentage</label>
-                                        <input type="number" max="100" min="0" name="percentage" class="form-control" id="technique_percentage" placeholder="Enter percentage..">
+                                        <input type="number" required max="100" min="0" name="percentage" class="form-control" id="technique_percentage" placeholder="Enter percentage..">
                                     </div>
                                     <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                     <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>
