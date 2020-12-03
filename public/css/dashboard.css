@@ -71,7 +71,7 @@ input[type=number] {
 #dashboard .navbar{
     padding: 2% 3% 0%;
 }
-  
+
 #dashboard .sidebar{
     padding:1% 2%;
     min-height: 100vh;
@@ -79,6 +79,14 @@ input[type=number] {
     /*background-image: linear-gradient(180deg, #fdb7ff 10%, #f82dff 100%);*/
     background-size: cover;
     color:#fff;
+}
+@media (max-width:991px) {
+    #dashboard .sidebar{
+        display: none;
+        position: absolute;
+        z-index: 100;
+        padding-top: 20px;
+    }
 }
 #dashboard .sidebar h3{
     font-weight: bold;
@@ -113,10 +121,16 @@ input[type=number] {
     font-weight: bold;
     box-shadow: 0 .15rem 1.75rem 0 rgba(231, 232, 235) ;
 }
-#dashboard .sidebar-content {
+ .sidebar-content {
     padding: 2%;
     background-color: #f82dff0d;
 }
+@media (max-width:768px) {
+    #dashboard .tab-pane{
+        padding:3% 2% ;
+    }
+}
+
 #dashboard .tab-pane-content p,#dashboard .tab-pane-content .p{
     padding-left: 3%;
 }
@@ -139,6 +153,16 @@ input[type=number] {
     background-color: #f82dff;
     padding: 5px 15px;
     color:rgba(255,255,255,.8);
+}
+#dashboard button.collapse{
+    display: inline;
+    font-size: 22px;
+    color: #ddd;
+    border: 1px #ddd solid;
+    margin-right: 20px;
+    background: none;
+    padding: 5px 15px;
+    z-index: 101;
 }
 #dashboard .topbar button:hover{
     color: #fff;
@@ -207,10 +231,7 @@ input:focus, textarea:focus, select:focus{
     display: inline-block;
 }
 #dashboard .skill {
-    display: inline-block;
-    margin: auto;
     margin-top: 25px;
-    min-width: 40%;
     position: relative;
     transition: all .5s ease;
 }
@@ -218,6 +239,15 @@ input:focus, textarea:focus, select:focus{
     text-align: center;
     margin: 0;
 }
+
+#dashboard .skills .progress-circle{
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
 #dashboard .skill .skill-choices{
     height: 80%;
 }

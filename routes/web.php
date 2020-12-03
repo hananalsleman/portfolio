@@ -17,87 +17,131 @@
 
 Route::get('/', 'BaseController@index');
 
-/********************************************** */
-//****************** Dashboard ****************/
-/********************************************** */
+Route::get('/about',  'BaseController@getAbout');
 
-//dashboard 
-Route::get('/dashboard', 'DashboardController@index');
+Route::get('/achievements', 'BaseController@getAchievements');
 
-Route::post('edit-home', 'DashboardController@editHomeInfo');
-
-Route::post('edit-aboutme', 'DashboardController@editAboutmeInfo');
-
-Route::post('edit-personalInfo', 'DashboardController@editPersonalInfo');
-
-//edit contact me
-Route::post('/edit-contactme', 'DashboardController@editContactmeInfo');
-
-//edit social links
-Route::post('/edit-sociallinks', 'DashboardController@editSocialLinks');
-
-//****************** Skills ****************/
-//add skill
-Route::post('add-skill', 'SkillController@save');
-
-//get skill
-Route::get('/skill/{id}', 'SkillController@getSkill');
-
-//edit skill
-Route::post('/skill/{id}/edit', 'SkillController@update');
-
-//delete skill
-Route::post('/skill/{id}/delete', 'SkillController@destroy');
-
-//************** End Skills ************////
-
-//************** Technique ************////
-//add technique
-Route::post('add-technique', 'TechniqueController@save');
-
-//get technique
-Route::get('/technique/{id}', 'TechniqueController@getTechnique');
-
-//edit technique
-Route::post('/technique/{id}/edit', 'TechniqueController@update');
-
-//delete technique
-Route::post('/technique/{id}/delete', 'TechniqueController@destroy');
-
-//*************** End Technique ************////
-
-//************** Achievement ************////
-//add achievement
-Route::post('add-achievement', 'AchievementController@save');
-
-//get achievement
-Route::get('/achievement/{id}', 'AchievementController@getAchievement');
-
-//edit achievement
-Route::post('/achievement/{id}/edit', 'AchievementController@update');
-
-//delete achievement
-Route::post('/achievement/{id}/delete', 'AchievementController@destroy');
-
-//*************** End Achievement ************////
-
-//************** Experience ************////
-//add experience
-Route::post('add-experience', 'ExperienceController@save');
-
-//get experience
-Route::get('/experience/{id}', 'ExperienceController@getExperience');
-
-//edit experience
-Route::post('/experience/{id}/edit', 'ExperienceController@update');
-
-//delete experience
-Route::post('/experience/{id}/delete', 'ExperienceController@destroy');
-
-//*************** End Experience ************////
-
+Route::get('/experience', 'BaseController@getExperiences');
 
 
 //Route::get('contact-me', 'ContactController@getContact');
 
 Route::post('contact-me', 'ContactController@saveContact');
+
+/********************************************** */
+//****************** Dashboard ****************/
+/********************************************** */
+
+//dashboard 
+
+//tabs for dashboard
+//home
+Route::get('/dashboard', 'DashboardController@index');
+//about
+Route::get('/dashboard/about', 'DashboardController@about');
+//achievements
+Route::get('/dashboard/achievements', 'DashboardController@achievements');
+//experience
+Route::get('/dashboard/experience', 'DashboardController@experience');
+//contact
+Route::get('/dashboard/contact', 'DashboardController@contact');
+
+
+
+
+
+//****************** Home Page ****************/
+//modals in home page
+Route::post('edit-home', 'DashboardController@editHomeInfo');
+//****************** End Home Page ****************/
+
+
+
+
+//****************** About Page ****************/
+//modals in about page
+Route::post('/dashboard/edit-aboutme', 'DashboardController@editAboutmeInfo');
+
+//******** Skills **********/
+//add skill
+Route::post('/dashboard/add-skill', 'SkillController@save');
+
+//get skill
+Route::get('/dashboard/skill/{id}', 'SkillController@getSkill');
+
+//edit skill
+Route::post('/dashboard/skill/{id}/edit', 'SkillController@update');
+
+//delete skill
+Route::post('/dashboard/skill/{id}/delete', 'SkillController@destroy');
+
+//******* End Skills ****////
+
+//***** Technique ********////
+//add technique
+Route::post('/dashboard/add-technique', 'TechniqueController@save');
+
+//get technique
+Route::get('/dashboard/technique/{id}', 'TechniqueController@getTechnique');
+
+//edit technique
+Route::post('/dashboard/technique/{id}/edit', 'TechniqueController@update');
+
+//delete technique
+Route::post('/dashboard/technique/{id}/delete', 'TechniqueController@destroy');
+
+//**** End Technique **/***/ */
+
+Route::post('/dashboard/edit-personalInfo', 'DashboardController@editPersonalInfo');
+
+//****************** End About Page ****************/
+
+
+
+//******************  Achievements Page ****************/
+
+//add achievement
+Route::post('/dashboard/add-achievement', 'AchievementController@save');
+
+//get achievement
+Route::get('/dashboard/achievement/{id}', 'AchievementController@getAchievement');
+
+//edit achievement
+Route::post('/dashboard/achievement/{id}/edit', 'AchievementController@update');
+
+//delete achievement
+Route::post('/dashboard/achievement/{id}/delete', 'AchievementController@destroy');
+
+
+//****************** End  Achievements Page ****************/ 
+
+
+
+//****************** Experience Page ****************/ 
+
+//add experience
+Route::post('/dashboard/add-experience', 'ExperienceController@save');
+
+//get experience
+Route::get('/dashboard/experience/{id}', 'ExperienceController@getExperience');
+
+//edit experience
+Route::post('/dashboard/experience/{id}/edit', 'ExperienceController@update');
+
+//delete experience
+Route::post('/dashboard/experience/{id}/delete', 'ExperienceController@destroy');
+
+//****************** End Experience Page ****************/ 
+
+
+
+//****************** Contact  Page ****************/ 
+//edit contact me
+Route::post('/dashboard/edit-contactme', 'DashboardController@editContactmeInfo');
+
+//edit social links
+Route::post('/dashboard/edit-sociallinks', 'DashboardController@editSocialLinks');
+
+//****************** End Contact Page ****************/ 
+
+

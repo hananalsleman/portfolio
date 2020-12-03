@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-     //
+    //home view
     public function index()
     {
         $techniques = Technique::all();
@@ -21,7 +21,7 @@ class DashboardController extends Controller
         $experiences = Experience::all();
         $links = Social_Link::all();
         $info = Personal_info::all();
-        return view('dashboard/dashboard', 
+        return view('dashboard/home', 
         ['techniques' => $techniques ,
         'skills' => $skills ,
         'achievements' => $achievements ,
@@ -30,6 +30,43 @@ class DashboardController extends Controller
         'myinfo' => $info[0] ]);
     }
 
+    //about view
+    public function about()
+    {
+        $techniques = Technique::all();
+        $skills = Skill::all();
+        $info = Personal_info::all();
+        return view('dashboard/about', 
+        ['techniques' => $techniques ,
+        'skills' => $skills ,
+        'myinfo' => $info[0] ]);
+    }
+    
+    //achievements view
+    public function achievements()
+    {
+        $achievements = Achievement::all();
+        return view('dashboard/achievements', 
+        [ 'achievements' => $achievements ]);
+    }
+
+    //experience view
+    public function experience()
+    {
+        $experiences = Experience::all();
+        return view('dashboard/experience', 
+        [ 'experiences' => $experiences ]);
+    }
+    //contact view
+    public function contact()
+    { 
+        $links = Social_Link::all();
+        $info = Personal_info::all();
+        return view('dashboard/contact', 
+        [
+            'links' => $links[0] ,
+            'myinfo' => $info[0]  ]);
+    }
     public function editHomeInfo(Request $request){
         
         $request->validate([
@@ -58,7 +95,7 @@ class DashboardController extends Controller
         $me->aboutme_description = $request->aboutme_description;
         $me->save();
         
-        return back()->with('success', 'You edited Your Personal Info Successfully!');
+        return back()->with('success', 'You edited Your About Info Successfully!');
     }
     
     public function editPersonalInfo(Request $request){
@@ -81,7 +118,7 @@ class DashboardController extends Controller
         $me->location = $request->location;
         $me->save();
         
-        return back()->with('success', 'You edited Your Personal Info Successfully!');
+        return back()->with('success', 'You edited Your Contact Info Successfully!');
     }
 
     public function editSocialLinks(Request $request){
@@ -94,6 +131,6 @@ class DashboardController extends Controller
         $me->github = $request->github;
         $me->save();
         
-        return back()->with('success', 'You edited Your Personal Info Successfully!');
+        return back()->with('success', 'You edited Your Social Links Info Successfully!');
     }
 }

@@ -1,0 +1,129 @@
+
+#about {
+    background-color: #f82dff21;
+}
+#about .description{
+    background-color: #f82dff8f;
+}
+#about .description h2{
+    text-align: center;
+    margin-top: 7%;
+}
+#about .description .p{
+    padding: 10%;
+    font-size: 20px;
+}
+#about .description .p i{
+    font-size: 35px;
+}
+#about .description .p p{
+    padding-left: 7%;
+    margin-bottom: 0;
+}
+#about .icons-social{
+    text-align: center;
+}
+#about .icons-social a{
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 18px;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    margin-left:10px;
+    color:#222;
+}
+#about .icons-social a:hover{
+    background-color: #fff;
+    transition: all .5s ease;
+}
+#about .skills,#about .techniques {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 3% 0 2%;
+}
+#about .skills h3 ,#about .techniques h3 {
+    text-align: center;
+    padding: 3% 0 2%;
+}
+
+#about .skills .skill {
+    margin: auto;
+    margin-top: 25px;
+    position: relative;
+    transition: all .5s ease;
+}
+
+#about .skills .skill h6{
+    text-align: center;
+    margin: 0;
+    transition: all .5s ease;
+}
+#about .skills .skill:hover  .progress-circle:after{
+    animation: rotate 3s infinite;
+    animation-direction: alternate;
+}
+#about .skills .skill:hover span{
+    font-weight: bold;
+}
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+#about .skills .skill:hover h6 {
+    font-weight: bold;
+}
+
+#about .skills .progress-circle{
+    display: block;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+#about .panel-body .line{
+    margin: 20px auto;
+}
+#about .panel .panel-body .line label{
+    width:35%;
+    display: inline-block;
+}
+#about .techniques .progress{
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+    margin-bottom: 20px;
+  }
+
+#about .techniques  .progress .progress-bar-danger{
+    background: #f82dff;
+}
+.progress-bar {
+    -webkit-transition: width 2.5s ease;
+    transition: width 2.5s ease;
+} 
+#about .techniques .technique  span{
+    color: #222;
+    display: block;
+    transition: all .5s ease;
+    padding-bottom: 6px;
+}
+#about .techniques .technique:hover span{
+    font-weight: bold;
+}
+#about .techniques small{
+    font-weight: bold;
+    float: right;
+}
+
+/*************************/
+/******* End About **********/
+/******************/

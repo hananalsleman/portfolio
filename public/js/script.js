@@ -9,12 +9,11 @@ $(document).ready(function () {
 	// Nav Sticky
 	$(window).scroll(function () {
 		if ($(window).scrollTop() > 500) {
-			$('.navbar').addClass('fixed-top');
+			$('#fullpage .navbar').addClass('fixed-top');
 		} else {
-			$('.navbar').removeClass('fixed-top');
+			$('#fullpage .navbar').removeClass('fixed-top');
 		}
 	});
-	
 	// wow
 	$(function () {
 		new WOW().init();
@@ -29,24 +28,11 @@ $(document).ready(function () {
 				return $(this).attr("aria-valuenow") + "%";
 			});
 
-			//value of progress bar animate
-			/*
-			$('.count').each(function () {
-				$(this).prop('Counter', 0).animate({
-						Counter: $(this).data('value')
-					}, {
-					duration: 2000,
-					easing: 'swing',
-					step: function () {                      
-						$(this).text(Math.ceil(this.Counter));
-					}
-				});
-			});
-			*/
 		}
 	});
 	
-	if($(window).width() < 768 ){
+	//button contact according to screen width
+	if($(window).width() < 991 ){
 		$('.navbar .nav-item').removeClass('contact');
 	}
 	else{

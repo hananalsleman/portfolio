@@ -1,0 +1,76 @@
+
+/*************************/
+/******* Achievements **********/
+/******************/
+#achievements {
+    background-color: #f82dff21;
+}
+ #achievements .achievement{
+    margin-top:35px;
+    position: relative;
+    transition: all .5s ease;
+}
+#achievements .achievement:hover{
+    transform: scale(1.1);
+}
+ #achievements .panel{
+    border:none;
+}
+ #achievements .achievement .panel-header{
+    border: none;
+    background: none;
+}
+ #achievements .icon-container{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 40px;
+    margin-top: -50px;
+    color:#f1ee15;
+}
+ #achievements .icon-container i{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #fff;
+    line-height: 70px;
+}
+ #achievements .achievement .panel-body{
+    text-align: center;
+    padding: 0;
+    margin-bottom: 70px;
+}
+ #achievements .achievement .panel-body label{
+    width: 100%;
+    background-color: #a3a3a3;
+    padding: 3% 1%;
+    color: #fff;
+    font-weight: bold;
+}
+ #achievements .achievement .panel-body p{
+    color: #4e4e4e;
+    padding: 5% 6% 1%;
+    font-size: 15px;
+}
+ #achievements .achievement .footer{
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+}
+
+ #achievements .achievement .footer span{
+    padding: 1% 7%;
+    color: #8c8c8c;
+    font-size: 14px;
+    display: block;
+    text-align: left;
+}
+ #achievements .achievement .footer span i{
+    width:10%;
+    text-align: center;
+}
+
+/*************************/
+/******* End Achievements **********/
+/******************/
