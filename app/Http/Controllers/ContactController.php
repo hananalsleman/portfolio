@@ -7,9 +7,9 @@ use Mail;
 
 class ContactController extends Controller { 
 
-      public function getContact() { 
+      public function getMessages() { 
 
-       return view('index'); 
+       return view('dashboard/messages'); 
 
      } 
 

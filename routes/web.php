@@ -11,6 +11,12 @@
 |
 */
 
+
+Auth::routes(['register' => false]);
+
+
+Route::post('/dashboard/logout', 'Auth\LoginController@logout');
+
 /********************************************** */
 //****************** Portofolio ****************/
 /********************************************** */
@@ -45,6 +51,9 @@ Route::get('/dashboard/achievements', 'DashboardController@achievements');
 Route::get('/dashboard/experience', 'DashboardController@experience');
 //contact
 Route::get('/dashboard/contact', 'DashboardController@contact');
+//messages
+Route::get('/dashboard/messages', 'ContactController@getMessages');
+
 
 
 

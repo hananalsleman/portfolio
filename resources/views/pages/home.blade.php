@@ -81,7 +81,7 @@
                     <ul>
                     @foreach ($achievements as $achievement )
                         @if ($loop->index < 4)
-                            <li class="col-12 col-md-3 wow fadeInLeft" data-wow-delay="0.3s">
+                            <li class="col-12 col-md-3 wow fadeInLeft" data-wow-delay="{{$loop->index/2}}s">
                                 <div class="date ">
                                     <span> {{ $achievement->year }} </span>
                                 </div>

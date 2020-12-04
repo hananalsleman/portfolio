@@ -15,10 +15,10 @@
     <div id="about" class="pt-4 pb-4">
         <div class="container pt-2">
             <div id="aboutme" class="d-flex flex-wrap panel">
-                <div class="col-md-5 pr-0 pl-0">
+                <div class="col-lg-5 pr-0 pl-0">
                     <img src="uploads/{{ $myinfo->image}}" class="w-100 h-100">
                 </div>
-                <div class="description col-md-7  pt-2 pb-4">
+                <div class="description col-lg-7  pt-2 pb-4">
                     <h2>{{ $myinfo->aboutme_title }}</h2>
                     <div class="p">
                         <i class="fa fa-quote-left "></i>

@@ -83,9 +83,12 @@ input[type=number] {
 @media (max-width:991px) {
     #dashboard .sidebar{
         display: none;
-        position: absolute;
+        position: fixed;
+        height: 100%;
         z-index: 100;
         padding-top: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 }
 #dashboard .sidebar h3{
@@ -449,16 +452,7 @@ input:focus, textarea:focus, select:focus{
     border: 4px solid #fff;
     background-color: #eee;
 }
-.cd-timeline-img img {
-    display: block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
-}
+
 @media only screen and (min-width: 1170px) {
     .cd-timeline-img {
         width: 60px;
@@ -595,16 +589,74 @@ input:focus, textarea:focus, select:focus{
     top: 30%;
     width: 25%;
     height: 60px;
-}
-#dashboard #experience .experience:nth-child(odd) .experience-date{
-    right: 25%;
-}
-#dashboard #experience .experience:nth-child(even) .experience-date{
-    left: 25%;
-}
-#dashboard #experience .experience-date{
     background-color: #c8c8c8;
 }
+@media (max-width:1170px) {
+    #dashboard #experience .cd-timeline-block{
+        margin-bottom: 50px;
+    }
+    .cd-timeline-img {
+        position : relative; 
+        left:-5;
+        width: 60px;
+        height: 60px;
+    }
+    #dashboard #experience .experience-content{
+        margin-top: 20px;
+    }
+    #dashboard #experience .experience-date{
+        top:0;
+        left:4%;
+        width:35%;
+    }
+    #dashboard #experience .experience .pointer:before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 20px solid #c8c8c8;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+}
+@media (min-width:1170px) {
+    #dashboard #experience .experience:nth-child(odd) .experience-date{
+        right: 25%;
+    }
+    #dashboard #experience .experience:nth-child(even) .experience-date{
+        left: 25%;
+    }
+    #dashboard #experience .experience:nth-child(odd) .pointer:before {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-left: 20px solid #c8c8c8;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+    #dashboard #experience .experience:nth-child(even) .pointer:after {
+        content: "";
+        position: absolute;
+        left: -20px;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-right: 20px solid #c8c8c8;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid transparent;
+    }
+}
+@media (max-width:768px) {
+    #dashboard #experience .experience-date{
+        width: 60%;
+    } 
+}
+
 #dashboard #experience .experience-date span{
     font-size: 20px;
     display: block;
@@ -620,28 +672,7 @@ input:focus, textarea:focus, select:focus{
     margin-top: 5%;
     display: block;
 }
-#dashboard #experience .experience:nth-child(odd) .pointer:before {
-    content: "";
-    position: absolute;
-    right: -20px;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-left: 20px solid #c8c8c8;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-}
-#dashboard #experience .experience:nth-child(even) .pointer:after {
-    content: "";
-    position: absolute;
-    left: -20px;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-right: 20px solid #c8c8c8;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-}
+
 #dashboard #experience .cd-timeline-img span{
     display: block;
     width: 100%;
@@ -710,3 +741,34 @@ input:focus, textarea:focus, select:focus{
 /*************************/
 /******* End Contact **********/
 /******************/
+
+
+/*************************/
+/*******  Login **********/
+/******************/
+
+#login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: #f82dff0d;
+}
+#login h1{
+    color:#f82dff;
+    font-weight: bold;
+}
+#login .content{
+    padding: 2% 20%;
+    padding-top: 8% ;
+}
+#login button{ 
+    background-color: #f82dff;
+    padding: 2% 12%;
+}
+#login button:hover{ 
+    box-shadow: 0 .15rem 1.75rem 0 rgba(231, 232, 235) ;
+}
+/*************************/
+/******* End Login **********/
+/******************/
+

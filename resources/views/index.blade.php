@@ -73,17 +73,17 @@
             <div class="footer-content">
                 <div class="row">
 
-                    <div class="col-12 col-md-4 order-2 order-md-1 mt-10">
+                    <div class="col-12 col-lg-4 order-2 order-lg-1 mt-10">
                         <div class="copyright-text">
                             <p>Copyright &copy; 2020 <a href="#" class="main-color">Rose</a></p>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4 order-1 order-md-2 ">
+                    <div class="col-12 col-lg-4 order-1 order-lg-2 ">
                         <a href="#" class="back-to-top">
                             <i class="fa fa-angle-up"></i>
                         </a>
                     </div>
-                    <div class="col-12 col-md-4 order-3 order-md-3 ">
+                    <div class="col-12 col-lg-4 order-3 order-lg-3 ">
                         <div class="social-icons">
                             <ul>
                                 @if($links->facebook != '')

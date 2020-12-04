@@ -55,7 +55,7 @@
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-envelope-o"></i></div>
                                     </div>
-                                    <input type="text" required name="email" class="form-control" value="{{$links->email}}" placeholder="email">
+                                    <input type="email" required name="email" class="form-control" value="{{$links->email}}" placeholder="email">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
@@ -124,31 +124,31 @@
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-facebook"></i></div>
                                     </div>
-                                    <input type="text" name="facebook" class="form-control" value="{{$links->facebook}}" placeholder="facebook url">
+                                    <input type="url" name="facebook" class="form-control" value="{{$links->facebook}}" placeholder="facebook url">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-linkedin"></i></div>
                                     </div>
-                                    <input type="text"  name="linkedin" class="form-control" value="{{$links->linkedin}}" placeholder="linkedin url">
+                                    <input type="url"  name="linkedin" class="form-control" value="{{$links->linkedin}}" placeholder="linkedin url">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-twitter"></i></div>
                                     </div>
-                                    <input type="text" name="twitter"  class="form-control"value="{{$links->twitter}}" placeholder="twitter url">
+                                    <input type="url" name="twitter"  class="form-control"value="{{$links->twitter}}" placeholder="twitter url">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-instagram"></i></div>
                                     </div>
-                                    <input type="text" name="instagram"  class="form-control"value="{{$links->instagram}}" placeholder="instagram url">
+                                    <input type="url" name="instagram"  class="form-control"value="{{$links->instagram}}" placeholder="instagram url">
                                 </div>
                                 <div class="input-group mb-2">
                                     <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="fa fa-github"></i></div>
                                     </div>
-                                    <input type="text" name="github"  class="form-control"value="{{$links->github}}" placeholder="github url">
+                                    <input type="url" name="github"  class="form-control"value="{{$links->github}}" placeholder="github url">
                                 </div>
                                 <button type="submit" class="btn btn-primary save pull-right">Save</button>
                                 <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">Close</button>

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<title>Dashboard</title>
-<meta name="description" content="">
-<meta name="author" content="Hanan Al-Slaiman">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
+@extends('layouts.app')
 
-<!-- Css -->
-<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome-free-5.11.2-web/css/fontawesome.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/animate.min.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/dashboard.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('css/progress-circle.css') }}">
-
-</head>
-
-<body id="dashboard">
+@section('cont')
 
     <div class="d-flex">
 
@@ -48,10 +32,42 @@
                     aria-controls="v-pills-contact" aria-selected="false"><i class="fa fa-phone mr-2"></i>Contact</a>
                 </li>
             </ul>
+            <hr/>
+            <ul class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <li class="nav-item text-center">
+                    <a class="nav-link" id="" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fa fa-inbox mr-2"></i>Logout</a>
+                </li>
+            </ul>
+                  
         </div>
         
         <!------------------- End Sidebar -------------------->
 
+  
+        <!-- Modal Logout -->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-dark">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form  role="form" id="form_logout" action="logout" method="post">
+                            {{csrf_field()}}
+                            <p>Do you want to logout ??</p>
+                            <button  type="submit" class="btn btn-primary save pull-right">Yes</button>
+                            <button type="button" class="btn btn-secondary cancel pull-right mr-1" data-dismiss="modal">No</button>
+        
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Modal Logout -->
 
          <!------------------- Sidebar Content -------------------->
         <div class="col-lg-10 sidebar-content">
@@ -67,13 +83,4 @@
 
     </div>
 
-    <!-- JavaScripts -->
-    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <!-- wow -->
-    <script src="{{ asset('js/wow.min.js') }}"></script>
-    <!-- Custom script -->
-    <script  src="{{ asset('js/dashboard.js') }}"> </script>
-</body>
-</html>
+@endsection
